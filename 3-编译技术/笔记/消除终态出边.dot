@@ -1,0 +1,14 @@
+digraph eliminate_out_of_final_state {
+    rankdir = LR;
+    compound = true;
+    subgraph cluster_origin {
+        0 -> E1 -> 2;
+    }
+    subgraph cluster_transform {
+        3 [label="0"];
+        4 [label="2"];
+        3 -> 1 -> 4;
+        1 -> E [label="ε"];
+    }
+    0 -> 3 [lhead = cluster_transform, ltail = cluster_origin]
+}

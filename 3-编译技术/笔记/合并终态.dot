@@ -1,0 +1,13 @@
+digraph merge_final_state {
+    rankdir = LR;
+    compound = true;
+    subgraph cluster_origin {
+        0 -> E1, E2;
+    }
+    subgraph cluster_transform {
+        p0 [label="0"];
+        p0 -> 1, 2;
+        1, 2 -> E [label="ε"];
+    }
+    0 -> 1 [lhead = cluster_transform, ltail = cluster_origin];
+}
